@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dpi-engine"
+version = "1.0.0"
+description = "A deep packet inspection engine that classifies and filters network traffic from PCAP captures."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "DPI Engine contributors" }]
+keywords = ["dpi", "networking", "pcap", "packet", "tls", "sni", "traffic-analysis"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: Security",
+    "License :: OSI Approved :: MIT License",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/example/dpi-engine"
+Repository = "https://github.com/example/dpi-engine"
+
+[project.scripts]
+dpi-engine = "dpi_engine.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
